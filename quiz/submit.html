@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-color:antiquewhite;
+            
+        }
+        .container{
+            display: flex;
+            gap:20px;
+            justify-content:start;
+            align-items: flex-start;
+            
+        }
+        .clickable-box {
+        display: block;
+        width:100px;
+        padding:20px;
+        margin:50px;
+        border:2px solid brown;
+        border-radius: 10px;
+        background-color: #f9fff9;
+        text-align:start;
+       
+        }
+        .clickable-box:hover
+        {
+            background-color: plum;
+            border-color: black;
+        }
+    </style>
+</head>
+<body> 
+ <hr><hr>
+    <h2 style="text-align: center;"> choose your quiz language</h2><hr><hr><br>
+    <div class="container">
+    <hr><hr>
+    <hr><hr>
+    <div style="color: brown;">
+    <h3>python:</h3></div>
+    <p class="clickable-box">Python is a high-level, interpreted programming language known for its simplicity and readability.
+    <a href="python.html" class="clickable-box">PYTHON</a></p>
+    <br><br>
+    <style>
+    one.clickable-box{
+        background-color: plum;
+            border-color: black;
+    }
+    </style>
+    <div style="color:brown">
+    <h3>JAVA:</h3></div>
+    <p class="clickable-box">Java is a high-level, object-oriented programming language designed with the principle of Write Once, Run Anywhere (WORA).
+    <a href="java.html" class="clickable-box">JAVA</a></p>
+    <style>
+    two.clickable-box{
+        background-color: plum;
+            border-color: black;
+            align-items: end;
+    }
+    </style>
+     <button type="button" onclick="history.back()" style="padding:10px 20px;background-color:rgba(16, 11, 127, 0.733);color:white;border:none;border-radius:4px">GO BACK</button>
+   </html>
