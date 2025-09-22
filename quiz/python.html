@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python Quiz</title>
+  <style>
+    body {color:aqua;
+      background-color:hwb(0 15% 84%); font-family: Arial; padding: 20px; }
+    .question { margin-bottom: 20px; }
+    .options label { display: block; margin: 5px 0; }
+    #submit { margin-top: 20px; }
+  </style>
+</head>
+<body>
+<hr><div style="color: white;">
+  <h2>(:Python Quiz:)</h2><hr></div>
+  <form id="quizForm">
+    <div class="question">
+      <p>1. Which of the following is used to define a block of code in Python?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="A"> A) curly braces</label>
+        <label><input type="radio" name="q1" value="B"> B) parentheses </label>
+        <label><input type="radio" name="q1" value="C"> C) indentation </label>
+        <label><input type="radio" name="q1" value="D"> D) semicolon </label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Which keyword is used to define a function in Python?</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="A"> A) func</label>
+        <label><input type="radio" name="q2" value="B"> B) define</label>
+        <label><input type="radio" name="q2" value="C"> C) def</label>
+        <label><input type="radio" name="q2" value="D"> D) function</label>
+      </div>
+    </div>
+     <div class="question">
+      <p>3. What is the output of print(2 ** 3)?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="A"> A) 6</label>
+        <label><input type="radio" name="q3" value="B"> B) 8</label>
+        <label><input type="radio" name="q3" value="C"> C) 9</label>
+        <label><input type="radio" name="q3" value="D"> D) 5</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>4. Which of these is a valid variable name in Python?</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="A"> A) 2name</label>
+        <label><input type="radio" name="q4" value="B"> B) name_2</label>
+        <label><input type="radio" name="q4" value="C"> C) name-2</label>
+        <label><input type="radio" name="q4" value="D"> D) name 2</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>5.What does the range(5) function return?</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="A"> A) [1,2,3,4,5]</label>
+        <label><input type="radio" name="q5" value="B"> B) [0,1,2,3,4]</label>
+        <label><input type="radio" name="q5" value="C"> C) [0,1,2,3,4,5]</label>
+        <label><input type="radio" name="q5" value="D"> D) [5,4,3,2,1]</label>
+      </div>
+    </div>
+    <div class="question">
+        <p>6.which of the following is not a python data type?</p>
+    <div class="options">
+        <label><input type="radio" name="q6" value="A"> A)list</label>
+        <label><input type="radio" name="q6" value="B"> B)set </label>
+        <label><input type="radio" name="q6" value="C"> C)map </label>
+        <label><input type="radio" name="q6" value="D"> D)tuple </label>
+      </div>
+    </div>
+    <div class="question">
+        <p>7.what is the result of bool([])?</p>
+    <div class="options">
+        <label><input type="radio" name="q7" value="A"> A)True</label>
+        <label><input type="radio" name="q7" value="B"> B)False</label>
+        <label><input type="radio" name="q7" value="C"> C)None</label>
+        <label><input type="radio" name="q7" value="D"> D)Error </label>
+      </div>
+    </div>
+    <div class="question">
+        <p>8.which keyword is used to create a clss in python?</p>
+    <div class="options">
+        <label><input type="radio" name="q8" value="A"> A)function</label>
+        <label><input type="radio" name="q8" value="B"> B)class</label>
+        <label><input type="radio" name="q8" value="C"> C)def</label>
+        <label><input type="radio" name="q8" value="D"> D)object</label>
+      </div>
+    </div>
+    <div class="question">
+        <p>9.what is the correct file extension for python files</p>
+    <div class="options">
+        <label><input type="radio" name="q9" value="A"> A).pyth</label>
+        <label><input type="radio" name="q9" value="B"> B).pt </label>
+        <label><input type="radio" name="q9" value="C"> C) .py</label>
+        <label><input type="radio" name="q9" value="D"> D) .pyt</label>
+      </div>
+    </div>
+    <div class="question">
+        <p>10.which of the following is used to handle exception in python?</p>
+    <div class="options">
+        <label><input type="radio" name="q10" value="A"> A)try-catch</label>
+        <label><input type="radio" name="q10" value="B"> B)try-except </label>
+        <label><input type="radio" name="q10" value="C"> C)do-catch </label>
+        <label><input type="radio" name="q10" value="D"> D)handle-error </label>
+      </div>
+    </div>
+    <button type="button" id="submit">Submit</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const answers = { q1: "C", q2: "C", q3:"B",q4:"B",q5:"B",q6:"C",q7:"B",q8:"B",q9:"C",q10:"B"};
+
+    document.getElementById("submit").onclick = function() {
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let key in answers) {
+        let selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").innerHTML = `<h3>Your Score: ${score} / ${total}</h3>`;
+    };
+  </script><br><br>
+ <button type="button" onclick="history.back()" style="padding:10px 20px;background-color:rgba(25, 180, 204, 0.733);color:white;border:none;border-radius:4px">GO BACK</button>
+</body>
+</html>
